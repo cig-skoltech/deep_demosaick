@@ -1,0 +1,43 @@
+---
+
+port: 4000
+host: 0.0.0.0
+safe: false
+
+
+### site serving configuration ###
+exclude: [CNAME, README.md, .gitignore]
+permalink: /:title ## disables post output
+timezone: null
+lsi: false
+markdown: kramdown
+plugins: [ jekyll-feed, jekyll-seo-tag]
+
+### content configuration ###
+title:       "Joint Image Demosaicking and Denoising with Iterative Networks"
+keywords:    "Image Demosaicking, Bayer, Fuji, Deep Learning, CNN, image restoration, XTRANS"
+description: "Iterative Residual Network for Deep Joint Image
+Demosaicking and Denoising"
+source_link: "https://github.com/cig-skoltech/deep_demosaick"
+favicon:     "img/favicon.ico"
+google_analytics_key: UA-49607422-1 ## put YOUR key here to enable tracking! (blank to disable)
+
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+- {icon: 'github', link: 'https://www.github.com/cig-skoltech'}
+- {icon: 'twitter', link: 'https://twitter.com/filippos_kok'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/filippos-kokkinos-03343a138/'}
+- {icon: 'envelope', link: 'mailto:filippos.kokkinos@skoltech.ru'}
+
+### template colors, used site-wide via css ###
+colors:
+  black:     '#111111'
+  white:     '#f8f8f8'
+  blue:      '#49a7e9'
+  green:     '#9bcf2f'
+  purple:    '#c869bf'
+  orange:    '#fab125'
+  turquoise: '#0fbfcf'
+
+kramdown:
+  auto_ids:  false

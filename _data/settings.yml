@@ -1,0 +1,7 @@
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+- {icon: 'github', link: 'https://www.github.com/cig-skoltech'}
+- {icon: 'twitter', link: 'https://twitter.com/filippos_kok'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/filippos-kokkinos-03343a138/'}
+- {icon: 'envelope', link: 'mailto:filippos.kokkinos@skoltech.ru'}
+# - {icon: 'rss-square', link: '/rss-feed.xml'}

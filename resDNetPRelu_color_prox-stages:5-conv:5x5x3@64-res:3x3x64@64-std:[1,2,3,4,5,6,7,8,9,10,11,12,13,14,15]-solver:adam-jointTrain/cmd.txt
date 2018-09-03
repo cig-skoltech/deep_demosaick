@@ -1,1 +1,0 @@
-nohup matlab -nodisplay -r "netConfig_prelu(1,'resDNetPRelu_color_prox',1:15,40);exit" > Logs/resDNetPRelu_color_prox-stages:5-conv:5x5x3@64-res:3x3x64@64-std:[1,...,15]-solver:adam-jointTrain.txt &
