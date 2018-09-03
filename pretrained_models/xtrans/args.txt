@@ -1,0 +1,1 @@
+Namespace(batch_size=8, bilinear=False, calc_covariance=False, clip=0.25, depth=5, epochs=200, k1=4, k2=4, lr=0.01, max_iter=20, num_gpus=2, save_images=True, save_path='results_experimentation/msr_xtrans_noisefree_iter20_noestimation_bugfix/', use_gpu=True)

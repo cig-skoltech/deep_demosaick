@@ -1,0 +1,1 @@
+Namespace(batch_size=4, clip=0.25, depth=5, epochs=200, init=False, k1=10, k2=10, lr=0.01, max_iter=10, noise_estimation=False, num_gpus=1, save_images=True, save_path='results_experimentation/best_of_all_last_paper/', use_gpu=True)

@@ -1,0 +1,1 @@
+Namespace(batch_size=8, calc_covariance=False, clip=0.25, demosaic=False, depth=5, epochs=300, k1=5, k2=5, lr=0.001, max_iter=20, num_gpus=1, save_images=True, save_path='results_experimentation/msr_bilinear_noisy_iter20_bugfix_2ndrun/', use_gpu=True)
