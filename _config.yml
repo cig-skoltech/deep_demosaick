@@ -20,7 +20,7 @@ description: "Iterative Residual Network for Deep Joint Image
 Demosaicking and Denoising"
 source_link: "https://github.com/cig-skoltech/deep_demosaick"
 favicon:     "img/favicon.ico"
-google_analytics_key: UA-49607422-1 ## put YOUR key here to enable tracking! (blank to disable)
+google_analytics_key: UA-125133594-1 ## put YOUR key here to enable tracking! (blank to disable)
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
