@@ -119,7 +119,6 @@ class TBPTT(torch.nn.Module):
                     loss = loss * 0.5
                 self.optimizer.zero_grad()
                 # backprop last module (keep graph only if they ever overlap)
-                #start = time.time()
                 loss.backward(retain_graph=self.retain_graph)
                 for i in range(self.k2-1):
                     # if we get all the way back to the "init_state", stop
@@ -127,13 +126,10 @@ class TBPTT(torch.nn.Module):
                         break
                     curr_grad = states[-i-1][0].grad
                     states[-i-2][1].backward(curr_grad, retain_graph=self.retain_graph)
-                # Tested clip_grad_norm
                 if self.clip_grad is not None:
                     torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.clip_grad)
-                #print("bw: {}".format(time.time()-start))
                 self.optimizer.step()
         self.model.zero_grad()
-        #del loss, L, states, xpre
         return xcur
 
 if __name__ == '__main__':
@@ -158,7 +154,6 @@ if __name__ == '__main__':
     mmnet = mmnet.cuda()
     optimizer = torch.optim.Adam(mmnet.parameters(), lr=1e-2)
     runner = TBPTT(mmnet, criterion, 5, 5, optimizer, max_iter=max_iter)
-    #output = runner(Variable(torch.Tensor(y)), Variable(torch.Tensor(M)), 2)
     print(criterion(Variable(torch.Tensor(y)),Variable(torch.Tensor(target))).item())
     for i in range(200):
         idx = 0
