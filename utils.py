@@ -209,6 +209,11 @@ def generate_mask(im_shape, pattern='RGGB'):
         b_mask[5,4] = 1
 
         mask = np.dstack((r_mask,g_mask,b_mask))
+        h, w = im_shape
+        nh = np.ceil(h*1.0/6)
+        nw = np.ceil(w*1.0/6)
+        mask = np.tile(mask,(int(nh), int(nw),1))
+        mask = mask[:h, :w,:]
         return mask
     else:
         raise NotImplementedError
