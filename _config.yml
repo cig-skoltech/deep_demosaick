@@ -41,3 +41,14 @@ colors:
 
 kramdown:
   auto_ids:  false
+
+defaults:
+  -
+    scope:
+      path: "_slides"  #__
+    values:
+      layout: "iframe"
+
+collections:
+  slides:
+    output: true

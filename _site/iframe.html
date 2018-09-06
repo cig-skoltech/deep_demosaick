@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+  <link type="text/css" rel="stylesheet" href="{{ site.github.url }}/lightslider/dist/css/lightslider.css" />
+  <script src="{{ site.github.url }}/lightslider/dist/js/lightslider.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+    img {
+      min-width: 100%
+    }
+  </style>
+</head>
+<body>
+{{ content }}
+<script type="text/javascript"> 
+    $(document).ready(function() {
+      $("ul").lightSlider({
+        "item": {{ page.item | default: 1 }},
+        "loop": {{ page.loop | default: false }},
+        "mode": "{{ page.mode | default: slide }}",
+        "speed": {{ page.speed | default: 600 }},
+        "pause": {{ page.pause | default: 2000 }},
+        "vertical": {{ page.vertical | default: false }},
+        "auto": {{ page.auto | default: false }},
+        "pauseOnHover": {{ page.pauseOnHover | default: false }},
+        "pager": {{ page.pager | default: true }},
+        "controls": {{ page.cotrols | default: true }},
+        "adaptiveHeight": {{ page.adaptiveHeight | default: false }}
+      });
+    });
+    {% for elem in page.style %}
+      function startAnim_{{ elem[0] }}() {
+        $("{{ elem[0] }}")
+        {% for style in elem[1].init %}
+          .css("{{ style[0] }}", "{{ style[1] }}")
+        {% endfor %}
+        {% if elem[1].to && elem[1].from %}
+          .animate({
+            {% for style in elem[1].to %}
+              "{{ style[0] }}": "{{ style[1] }}",
+            {% endfor %}
+            }, {{ elem[1].duration | default: 2000 }})
+          .animate({
+            {% for style in elem[1].from %}
+              "{{ style[0] }}": "{{ style[1] }}",
+            {% endfor %}
+            }, {{ elem[1].duration | default: 2000 }}, startAnim_{{ elem[0] }})
+        {% endif %}
+      }
+      startAnim_{{ elem[0] }}();
+    {% endfor %}
+</script>
+</body>
+</html>
