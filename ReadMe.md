@@ -23,7 +23,7 @@ In order to process RAW files take a look at the Jupyter notebook. The algorithm
 To produce a comparable output from DCRaw's demosaicking algorithm run:
 
 ```shell
-dcraw -T -o 0 -M -W -6 {filename}
+dcraw -j -T -o 0 +M -w -4 {filename}
 ```
 Note: We will upload a revised version of Application which will works with all Bayer variants and it will also support Fuji Xtrans.
 ### Models
@@ -66,6 +66,9 @@ optional arguments:
   -estimate_noise       Estimate noise std via WMAD estimator
 ```
 
+### Known issues
+- Application currently does not support Fuji XTrans because dcraw rotates for unknown reason the document files
+- DCRAW for some RAW images will misinterpret the CFA pattern indicating that it is RGGB, therefore the end result will be wrong. For these images please proceed with manual padding.
 ### Running into issues?
 
 Contact Filippos Kokkinos <filippos.kokkinos@skoltech.ru>
