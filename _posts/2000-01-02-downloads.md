@@ -15,7 +15,7 @@ fa-icon: cloud-download
 # References
 
 - *Kokkinos, F., & Lefkimmiatis, S. (2018). Iterative Residual Network for Deep Joint Image Demosaicking and Denoising. arXiv preprint arXiv:1807.06403. [(paper)](https://arxiv.org/abs/1807.06403)*
-- *Kokkinos, F., & Lefkimmiatis, S. (2018). Deep Image Demosaicking using a Cascade of Convolutional Residual Denoising Networks. arXiv preprint arXiv:1803.05215. [(paper)](https://arxiv.org/abs/1803.05215)*
+- *Kokkinos, F., & Lefkimmiatis, S. (2018). Deep Image Demosaicking using a Cascade of Convolutional Residual Denoising Networks. The European Conference on Computer Vision (ECCV), 2018. [(paper)](https://arxiv.org/abs/1803.05215)*
 
 -------------------------
 # Presentations
